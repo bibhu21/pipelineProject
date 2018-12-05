@@ -3,6 +3,6 @@ node{
        git 'https://github.com/bibhu21/pipelineProject.git'
   }
   stage('mvn package'){
-    sh 'mvn clean package'
-  }
+      def mvnHome =  tool name: 'maven-3', type: 'maven'   
+      sh "${mvnHome}/bin/mvn package"  }
 }
